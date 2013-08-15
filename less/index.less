@@ -1,0 +1,301 @@
+/* Add additional stylesheets below
+-------------------------------------------------- */
+
+/* ------------------------------------------------- */ 
+/*      varialbles                                   */
+/* ------------------------------------------------- */
+@carouselHeight: 500px;
+@color_main: #89c557;
+@color_soft: #fbffd5;
+
+@width-max: 1280px;
+@width-min: 100%;
+
+/*
+  Bootstrap's documentation styles
+  Special styles for presenting Bootstrap's documentation and examples
+*/
+.delay-animation (@delay){
+  animation-delay:@delay;
+  -webkit-animation-delay:@delay;
+  -moz-animation-delay:@delay;
+}
+.border-radius (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+.transitionAll
+{
+  transition:all 0.4s;
+  -moz-transition:all 0.4s; /* Firefox 4 */
+  -webkit-transition:all 0.4s; /* Safari and Chrome */
+  -o-transition:all 0.4s; /* Opera */
+}
+.gradient (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(top, @startColor, @endColor);
+  background: -moz-linear-gradient(top, @startColor, @endColor);
+  background: -ms-linear-gradient(top, @startColor, @endColor);
+  background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.opacity (@opacity: 0.5) {
+  -webkit-opacity:  @opacity;
+  -moz-opacity:     @opacity;
+  opacity:    @opacity;
+}
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+  text-shadow: @string;
+}
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow:    @string;
+  box-shadow:         @string;
+}
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+  -webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  -moz-box-shadow:  @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  box-shadow:   @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+  -webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  -moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.box-sizing (@type: border-box) {
+  -webkit-box-sizing: @type;
+  -moz-box-sizing:    @type;
+  box-sizing:         @type;
+}
+
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
+}
+.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius:    @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius:  @bottomleft;
+  -webkit-border-top-left-radius:     @topleft;
+
+  -moz-border-radius-topright:        @topright;
+  -moz-border-radius-bottomright:     @bottomright;
+  -moz-border-radius-bottomleft:      @bottomleft;
+  -moz-border-radius-topleft:         @topleft;
+
+  border-top-right-radius:            @topright;
+  border-bottom-right-radius:         @bottomright;
+  border-bottom-left-radius:          @bottomleft;
+  border-top-left-radius:             @topleft;
+
+  -moz-background-clip:    padding; 
+  -webkit-background-clip: padding-box; 
+  background-clip:         padding-box; 
+}
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+  -webkit-animation: @name @duration @delay @ease;
+  -moz-animation:    @name @duration @delay @ease;
+  -ms-animation:     @name @duration @delay @ease;
+}
+
+.transition (@transition) {
+  -webkit-transition: @transition;  
+  -moz-transition:    @transition;
+  -ms-transition:     @transition; 
+  -o-transition:      @transition;  
+}
+.transform(@string){
+  -webkit-transform: @string;
+  -moz-transform:    @string;
+  -ms-transform:     @string;
+  -o-transform:      @string;
+}
+.columns(@columnCount,@columnGap)
+{
+          column-count:@columnCount;
+     -moz-column-count:@columnCount; /* Firefox */
+  -webkit-column-count:@columnCount; /* Safari and Chrome */
+
+          column-gap:@columnGap;
+     -moz-column-gap:@columnGap; /* Firefox */
+  -webkit-column-gap:@columnGap; /* Safari and Chrome */
+
+}
+/* ------------------------------------------------- */ 
+/*      global fonts                                 */
+/* ------------------------------------------------- */
+body 
+{
+  // font stack
+  font-family: 'helvetica neue', arial, sans-serif; 
+  // font size
+  font-size: 1em;
+  // font weight
+  font-weight: 200;
+  // font color
+  color: #393939;
+  background-color:#fafafa;
+}
+
+/* ------------------------------------------------- */ 
+/*      Native DOM objects                           */
+/* ------------------------------------------------- */
+a
+{
+  color:#888;
+}
+a:hover
+{
+  text-decoration:none;
+}
+ul
+{
+  list-style-type:none;
+}
+header
+{
+  margin:0;
+  
+  h1
+  {
+    font-size:1em;
+  }
+  
+}
+
+/* ------------------------------------------------- */ 
+/*      Objects                                      */
+/* ------------------------------------------------- */
+
+.page-container
+{
+  // page width
+  max-width:@width-max;
+  min-width:@width-min;
+  margin:0 auto;
+  margin-top:0px;
+  //background-color:#fdfdfd;
+  
+  height:auto;
+}
+
+
+/* ------------------------------------------------- */ 
+/*      styles                                       */
+/* ------------------------------------------------- */
+.lead-message
+{
+  width:100%;
+  background-color:#292929;
+  height:30px;
+}
+header.main-head
+{
+  width:100%;
+  background-color:transparent;
+  height:50px;
+  overflow:hidden;
+}
+.hero
+{
+  width:100%;
+  background-color:transparent;
+  height:auto;
+  overflow:hidden;
+  margin:0;
+
+  .row 
+  {
+    background-color:#fff;
+    
+    .col-lg-8
+    {
+      
+    }
+  }
+}
+.hero-shadow 
+{
+  img
+  {
+    margin-top:-2px
+  }
+}
+.media
+{
+  width:100%;
+  background:transparent url(../img/media.png) 50% 0 no-repeat;
+  height:60px;
+  overflow:hidden;
+  margin:0;
+//  border:1px solid #ddd;
+  text-align:center;
+}
+.bf
+{
+  width:100%;
+  background-color:transparent;
+  height:300px;
+  overflow:hidden;
+  margin:0;
+}
+.cf
+{
+  width:100%;
+  background-color:transparent;
+  height:500px;
+  overflow:hidden;
+  margin:0;
+}
+.wrap-cf
+{
+  height:1000px;
+  width:100%;
+  background:transparent url(../img/bg-sunrise.jpg) 0 0 no-repeat;
+}
+.wrap-wide
+{
+  max-width:@width-max;
+  min-width:@width-min;
+  margin: 0 auto;
+  background: transparent url(../img/bg-linen.png) 0 0 repeat;
+  position:relative;
+  border-bottom:1px solid #ddd;
+}.wrap-bg
+{
+  width:@width-min;
+  margin: 0 auto;
+  position:relative;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #98c83d;
+  border-color: #888888;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #88c219;
+  border-color: #292929;
+}
+
+.free-shipping
+{
+  
+}
+
+.half-round
+{
+  width:168px;
+  height:74px;
+  margin:0 auto;
+}

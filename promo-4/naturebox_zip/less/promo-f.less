@@ -1,0 +1,612 @@
+/* Add additional stylesheets below
+-------------------------------------------------- */
+
+/* ------------------------------------------------- */ 
+/*      varialbles                                   */
+/* ------------------------------------------------- */
+@carouselHeight: 500px;
+@color_main: #89c557;
+@color_soft: #fbffd5;
+
+
+
+/*
+  Bootstrap's documentation styles
+  Special styles for presenting Bootstrap's documentation and examples
+*/
+.delay-animation (@delay){
+  animation-delay:@delay;
+  -webkit-animation-delay:@delay;
+  -moz-animation-delay:@delay;
+}
+.border-radius (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+.transitionAll
+{
+  transition:all 0.4s;
+  -moz-transition:all 0.4s; /* Firefox 4 */
+  -webkit-transition:all 0.4s; /* Safari and Chrome */
+  -o-transition:all 0.4s; /* Opera */
+}
+.gradient (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(top, @startColor, @endColor);
+  background: -moz-linear-gradient(top, @startColor, @endColor);
+  background: -ms-linear-gradient(top, @startColor, @endColor);
+  background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.opacity (@opacity: 0.5) {
+  -webkit-opacity:  @opacity;
+  -moz-opacity:     @opacity;
+  opacity:    @opacity;
+}
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+  text-shadow: @string;
+}
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow:    @string;
+  box-shadow:         @string;
+}
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+  -webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  -moz-box-shadow:  @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  box-shadow:   @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+  -webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  -moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+  box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.box-sizing (@type: border-box) {
+  -webkit-box-sizing: @type;
+  -moz-box-sizing:    @type;
+  box-sizing:         @type;
+}
+
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
+}
+.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius:    @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius:  @bottomleft;
+  -webkit-border-top-left-radius:     @topleft;
+
+  -moz-border-radius-topright:        @topright;
+  -moz-border-radius-bottomright:     @bottomright;
+  -moz-border-radius-bottomleft:      @bottomleft;
+  -moz-border-radius-topleft:         @topleft;
+
+  border-top-right-radius:            @topright;
+  border-bottom-right-radius:         @bottomright;
+  border-bottom-left-radius:          @bottomleft;
+  border-top-left-radius:             @topleft;
+
+  -moz-background-clip:    padding; 
+  -webkit-background-clip: padding-box; 
+  background-clip:         padding-box; 
+}
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+  -webkit-animation: @name @duration @delay @ease;
+  -moz-animation:    @name @duration @delay @ease;
+  -ms-animation:     @name @duration @delay @ease;
+}
+
+.transition (@transition) {
+  -webkit-transition: @transition;  
+  -moz-transition:    @transition;
+  -ms-transition:     @transition; 
+  -o-transition:      @transition;  
+}
+.transform(@string){
+  -webkit-transform: @string;
+  -moz-transform:    @string;
+  -ms-transform:     @string;
+  -o-transform:      @string;
+}
+.columns(@columnCount,@columnGap)
+{
+          column-count:@columnCount;
+     -moz-column-count:@columnCount; /* Firefox */
+  -webkit-column-count:@columnCount; /* Safari and Chrome */
+
+          column-gap:@columnGap;
+     -moz-column-gap:@columnGap; /* Firefox */
+  -webkit-column-gap:@columnGap; /* Safari and Chrome */
+
+}
+/* ------------------------------------------------- */ 
+/*      global fonts                                 */
+/* ------------------------------------------------- */
+body 
+{
+  // font stack
+  font-family: 'helvetica neue', arial, sans-serif; 
+  // font size
+  font-size: 1em;
+  // font weight
+  font-weight: 200;
+  // font color
+  color: #393939;
+  background-color:#eee;
+}
+
+/* ------------------------------------------------- */ 
+/*      Native DOM objects                           */
+/* ------------------------------------------------- */
+img, object, embed 
+{
+  max-width: 100%;
+  height: auto;
+}
+a
+{
+  color:#888;
+}
+a:hover
+{
+  text-decoration:none;
+}
+ul
+{
+  list-style-type:none;
+}
+header
+{
+  margin:0;
+  
+  h1
+  {
+    font-size:1em;
+  }
+  
+}
+.top-bar
+{
+  //margin:0;
+  background: transparent url(../img/bg-linen.png) 0 0 repeat;
+  ul
+  {
+    padding-top:15px;
+    width:62.5em;
+    margin:0 auto;
+    
+    li
+    {
+      color:#292929;//#ff4400;
+      font-size:0.8em;
+      font-weight:400;   
+    }
+  }
+  h1
+  {
+    display:none;
+  }
+}
+.navbar
+{
+  background: transparent url(../img/bg-linen.png) 0 0 repeat;
+  padding: 20px 0 8px;
+  .logo
+  {
+    padding:0;
+  }
+  .join-community
+  {
+    color:#888888;//#ff4400;
+    font-size:0.8em;
+    font-weight:400;
+    text-align:right;
+    padding:0; 
+  }
+}
+
+form
+{
+  margin:0;
+  background-color:#fafafa;
+  fieldset
+  {
+    //border:none;
+    margin: 0.5em 0;
+    padding:1em 0 0.25em;
+    
+    label
+    {
+      display:none;
+    }
+    .row
+    {
+      .columns
+      {
+        border:none;
+      }
+    }
+  }
+}
+footer
+{
+  height:32px;
+  background-color:#393939;
+  border-top:1px solid #000;
+  margin-top:-1px;
+  p
+  {
+    line-height:30px;
+    text-align:center;
+    color:#555;
+    font-size: 0.8em;
+  }
+}
+/* ------------------------------------------------- */ 
+/*      Objects                                      */
+/* ------------------------------------------------- */
+
+.page-container
+{
+  // page width
+  margin:0 auto;
+  margin-top:0px;
+  //background-color:#fdfdfd;
+  
+  height:auto;
+}
+
+
+/* ------------------------------------------------- */ 
+/*      styles                                       */
+/* ------------------------------------------------- */
+button.cta-orange, .button.cta-orange {
+    background-color: #ff9900;
+    border-color: #ff9900;
+    color: white; }
+    button.cta-orange:hover, button.cta-orange:focus, .button.cta-orange:hover, .button.cta-orange:focus {
+      background-color: #ff7700; }
+    button.cta-orange:hover, button.cta-orange:focus, .button.cta-orange:hover, .button.cta-orange:focus {
+      color: white; }
+      
+section.main
+{
+  background: transparent url(../img/bg-linen.png) 0 0 repeat;
+  border-bottom: 1px solid #ccc;
+  .row
+  {
+    background-color:#fff;
+    border:1px solid #ccc;
+    
+  }
+}
+.hero
+{
+  position:relative;  
+  //height:100%;
+  //background:red url(../img/hero-x.jpg) 0 0 no-repeat;
+  // height:600px;
+  img
+  {
+    width:100%;
+    //height:100%;
+  }
+  .lead-message 
+  {
+    position:absolute;
+    margin-left:100px;
+    //background-color:#292929;
+    bottom:24px;
+    
+    h2
+    {
+      font-size:1.7em;
+      color:#fff;
+      //text-align:center;
+      //margin:24px 0 12px;
+      line-height:1.2em;
+      font-weight:400;
+      letter-spacing:1px;
+      text-shadow: rgba(0,0,0,0.7) 4px 2px 2px;
+    }
+  }
+}
+.wrap-cta
+{
+  position:relative;
+  text-align:center;
+  //height:450px;
+  
+  h2
+  {
+    font-size:1.5em;
+    color:#292929;//#54391b;
+    //text-align:center;
+    margin:28px 0 12px;
+    line-height:1.2em;
+    font-weight:600;
+    margin-bottom:0;
+  }
+  p
+  {
+    margin:0 0 12px;
+    color:#54391b;
+    
+    span.retail
+    {
+      text-decoration:line-through;
+      //font-size:1em;
+      color:#aaa;
+    }
+    span.offer-ends
+    {
+      font-size:0.8em;
+    }
+  }
+  .wrap-free-shipping
+  {
+    font-size:0.75em;
+    color:#54391b;
+  }
+}
+.signup-form
+{
+  position:relative;
+  margin-top:40px;
+}
+.wrap-handwrite
+{
+  position:absolute;
+  top:-28px;
+
+  p.handwrite
+  {
+    color:#ff9900;//#98c83d;
+  }
+  
+}
+img.down-pointer
+{
+  position:absolute;
+  top:-20px;
+  left:154px;
+}
+.media
+{
+  width:100%;
+  //background:transparent url(../img/media.png) 50% 0 no-repeat;
+  height:auto;
+  overflow:hidden;
+  margin:0;
+//  border:1px solid #ddd;
+  text-align:center;
+  padding-bottom:20px;
+}
+
+
+.hero-shadow
+{
+  height:13px;
+  text-align:center;
+  img
+  {
+    margin-top:-8px;
+  }
+}
+
+section.value
+{
+  text-align:center;
+  padding:40px 0 300px;
+  border-bottom:1px solid #444;
+  background: #292929 url(../img/bg-kitchen-b.jpg) 50% 0 no-repeat;
+  
+  .row
+  {
+    margin-top:0px;
+    
+    .wrap-item
+    {
+      padding:30px 20px 20px;
+      background-color:rgba(255,255,255,0.98);
+      border:1px solid #888;
+      .box-shadow(0 1px 12px 4px rgba(0,0,0,0.5));
+      text-align:left;
+      
+      ul
+      {
+        list-style-image:url('../img/leaf.jpg');
+        list-style-position:outside;
+        
+        li
+        {
+          margin:0px 0 6px 22px;
+          p
+          {
+            font-weight:400;
+            color:#292929;
+            text-align:left;
+            line-height:1.2em;
+          }
+        }
+      }
+    }
+   
+   h5
+    {
+      font-size:1em;
+      margin-bottom:16px;
+      color:#5da423;
+      // /font-weight:600;
+    }
+    p
+    {
+      //padding:0;
+      margin:0;
+      font-size:0.85em;
+      color:#292929;
+      font-weight:600;
+      text-align:center;
+    }
+  }
+}
+.half-round
+{
+  width:224px;
+  height:74px;
+  margin:0 auto;
+}
+
+section.nutrition
+{
+  height:auto;
+  padding:40px 0;
+  border-bottom:1px solid #aaa;
+  background-color:#f8f8f8;
+  //background:#fff url(../img/bg-sunrise.jpg) 50% 0 no-repeat;
+  background:#292929 url(../img/bg-nuts.jpg) 50% 0 no-repeat;
+  
+  h2
+  {
+    text-align:center;
+    color: #fff;//#54391b; //#ffc572;
+    font-weight:800;
+    font-size:5em;
+    text-shadow: rgba(0,0,0,0.8) 0px 2px 12px;
+    line-height:1em;
+    margin-top:80px;
+    width:60%
+  }
+  h3
+  {
+    color:#5da423; //#54391b;
+  }
+  .wrap
+  {
+    padding: 40px 0 0 0;
+    
+  }
+  .fs 
+  {
+    background-color:rgba(255,255,255,1.0);
+    border:1px solid #000;
+  }
+}
+
+.fs-nutrition
+{
+  margin-bottom:60px;
+  
+  
+  ul
+  {
+    li
+    {
+      p
+      {
+        line-height:30px;
+        margin:0;
+        em,span
+        {
+          font-weight:800;
+          font-size:1.25em;
+        }
+        img 
+        {
+          float:left;margin-right:12px
+        }
+      }
+    }
+  }
+  
+}
+.fs-guarantee
+{
+  p
+  {
+    line-height:1.2em;
+  }
+}
+// phones
+@media only screen and (max-width: 767px) 
+{
+  section.value
+  {
+    background: transparent url(../img/bg-kitchen-down.jpg) 50% bottom no-repeat;
+    
+    .wrap-item
+    {
+      width:80%;
+      float:none;
+      margin: 0 auto 12px;
+    }
+  }
+  .media
+  {
+    padding:8px 0;
+  }
+  .hero-shadow
+  {
+    img
+    {
+      margin-top:-11px;
+    }
+  }
+  #section-nutrition
+  {
+    h4
+    {
+      color:#fff;
+      text-align:center;
+      font-weight:600;
+      font-size:2.5em;
+      text-shadow: rgba(0,0,0,0.8) 0px 2px 12px;
+      line-height:1em;
+      margin-top:40px;
+    }
+    h3
+    {
+      margin-top:30px;
+    }
+    .row
+    {
+      .columns
+      {
+        float:none;
+        margin:0 auto;
+      }
+      .fs-nutrition
+      {
+        margin-bottom:0px;
+      }
+      
+    }
+  }
+}
+
+// phones narrow screen
+@media only screen and (max-width: 585px) 
+{
+  .hidethisone
+  {
+    display:none;
+  }
+  .media
+  {
+    padding:8px 0;
+  }
+  .hero-shadow
+  {
+    img
+    {
+      margin-top:-14px;
+    }
+  }
+}
