@@ -224,8 +224,9 @@ footer
   background-image: url(../img/test/blueberry-nom-nom.jpg);
   background-repeat: no-repeat;
   background-size:cover;
+  border-bottom:2px solid #888;
 } 
-.nbcm-top-nav
+.nbcm-side-advert
 {
   background-color:#fff;
   //background-color:rgba(255,255,255,1.0);
@@ -238,7 +239,11 @@ footer
   //z-index:99;
   font-size:0.85em;
 
-.social-proof-press
+  h6
+  {
+    text-align:center;
+  }
+  .social-proof
   {
     //float:right;
     color:#888;
@@ -246,6 +251,7 @@ footer
     background-color:#eee;
     padding:4px;
     border:1px dotted #ccc;
+    margin-bottom:8px;
   } 
   
   .nbcm-xyz
@@ -279,7 +285,24 @@ footer
   border-bottom:1px dotted #ddd;
   font-size: 0.825em;
   margin-bottom:12px;
+  
+ 
+  
+  p.about-writer
+  {
+    font-style:italic;
+    margin-top:1em;
+    color:#888;
+  }
 }
+.picture-profile
+  {
+    width:80px;
+    height:80px;
+    .border-radius(60px);
+    overflow:hidden;
+    border:1px solid #bbb;
+  }
 .nbcm-segment
 {
   background-color:transparent;
@@ -300,7 +323,7 @@ footer
   {
     background-color:#fff;
     
-    p
+    p.story
     {
       margin-top:24px;
       columns:100px 3;
@@ -314,7 +337,8 @@ footer
   .wrapper-right
   {
     background-color:#fff;   
-    padding-top:24px;     
+    padding-top:24px;
+    margin-top:24px;     
   }
   
   .nb-wrapper-segment-id
@@ -367,7 +391,22 @@ footer
     //background-color:#fff;
   }
 }
-
+.nbcm-customer-review
+{
+  .picture-profile
+  {
+    margin:0 auto;
+  }
+  h6
+  {
+    //text-align:left;
+    margin: 6px 0 12px ;  
+  }
+  p
+  {
+    //text-align:left;  
+  }
+}
 
 /* ------------------------------------------------- */ 
 /*      styles                                       */
