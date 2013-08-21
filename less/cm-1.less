@@ -5,7 +5,7 @@
 /*      varialbles                                   */
 /* ------------------------------------------------- */
   //@carouselHeight: 500px;
-@color_primary: #9ac940; //green
+@color_primary: #2d1152; //green
 @color_secondary: #fbffd5;
 
 
@@ -139,7 +139,7 @@ body
   font-weight: 200;
   // font color
   color: #393939;
-  background-color:#eee;
+  background-color:#eaeaec;
 }
 
 /* ------------------------------------------------- */ 
@@ -162,95 +162,61 @@ ul
 {
   list-style-type:none;
 }
-
+header
+{
+  h1, h2, h3, h4, h5
+  {
+    margin:0;
+    line-height:1em;
+  }
+  h1
+  {
+    font-weight:400;
+  }
+}
+footer
+{
+  text-align:center;
+  color:#888;
+}
 /* ------------------------------------------------- */ 
 /*      Objects                                      */
 /* ------------------------------------------------- */
-.row
-{
-  max-width: 100em;
-}
-.nb-page-container
+.nbcm-page-container
 {
   // page width
   margin:0 auto;
   margin-top:0px;
   //background-color:#fdfdfd;
-  
+  border:none;
   height:auto;
 }
-.nb-top-nav
-{
-  background-color:#fff;
-  //background-color:rgba(255,255,255,1.0);
-  padding:0px 0 8px;
-  border:1px solid #eee;
-  //border-bottom:1px solid #888;
-  //position:fixed;
-  //left:0;
-  //right:0;
-  //z-index:99;
-  font-size:0.85em;
-  
-  .lead-msg
+.nbcm-lead-msg
   {
-    float:left;
+    //float:left;
     padding:4px 0;
     background-color:@color_primary;
     width:100%;
-    margin-bottom:12px;
+   // margin-bottom:12px;
     
     a
     {
-      color:darken(@color_primary,25%);
+      color:lighten(@color_primary,55%);
       font-weight:400;
       
       span
       {
         color:#fff;
-        font-size:0.85em;
+        font-size:0.55em;
         text-transform:uppercase;
       }
     }
   }
-  
-  .quick-access
-  {
-    //float:right;
-    color:#888;
-    text-align:center;
-  } 
-  
-  .nb-header
-  {
-    text-align:center;
-    background-color:#fff;
-    padding: 12px 0;
-  } 
-}
-.nb-links-item-list
-{
-  list-style: none;
-  margin:0;
-  
-  .nb-links-item
-  {
-    display: inline;
-    margin:0 6px;
-    
-    a.nb-links
-    {
-      color:#292929;
-      font-size:1em;
-      font-weight:600;
-    }
-  }
-}
-.nb-wrapper-hero
+.nbcm-wrapper-hero
 {
   width:100%;
   //min-height:640px;
-  height:900px;
+  height:200px;
   //height:56.25em;
   position:relative;
   overflow:hidden;
@@ -258,11 +224,98 @@ ul
   background-image: url(../img/test/blueberry-nom-nom.jpg);
   background-repeat: no-repeat;
   background-size:cover;
+} 
+.nbcm-top-nav
+{
+  background-color:#fff;
+  //background-color:rgba(255,255,255,1.0);
+  padding:0px 0 8px;
+  //border:1px solid #eee;
+  //border-bottom:1px solid #888;
+  //position:fixed;
+  //left:0;
+  //right:0;
+  //z-index:99;
+  font-size:0.85em;
+
+.social-proof-press
+  {
+    //float:right;
+    color:#888;
+    text-align:center;
+    background-color:#eee;
+    padding:4px;
+    border:1px dotted #ccc;
+  } 
+  
+  .nbcm-xyz
+  {
+    text-align:center;
+    background-color:#fff;
+    padding: 12px 0;
+  } 
 }
-.nb-segment
+.nbcm-links-item-list
+{
+  list-style: none;
+  margin:0;
+  
+  .nbcm-links-item
+  {
+    display: block;
+    margin:12px 0;
+    padding:0 20px;
+    
+    a.nbcm-links
+    {
+      color:#292929;
+      font-size:1em;
+      font-weight:600;
+    }
+  }
+}
+.nbcm-byline
+{
+  border-bottom:1px dotted #ddd;
+  font-size: 0.825em;
+  margin-bottom:12px;
+}
+.nbcm-segment
 {
   background-color:transparent;
   position:relative;
+  padding: 0px 0 60px 0;
+  
+  .nbcm-wrapper
+  {
+    min-height:500px;
+    border:1px solid #ddd;
+    
+    .pad
+    {
+      padding:8px 4px;
+    }
+  }
+  .wrapper-left
+  {
+    background-color:#fff;
+    
+    p
+    {
+      margin-top:24px;
+      columns:100px 3;
+      -webkit-columns: 2; /* Safari and Chrome */
+      -moz-columns:2; /* Firefox */
+       column-gap:4em;
+      -moz-column-gap:4em; /* Firefox */
+      -webkit-column-gap:4em; /* Safari and Chrome */
+    }    
+  }
+  .wrapper-right
+  {
+    background-color:#fff;   
+    padding-top:24px;     
+  }
   
   .nb-wrapper-segment-id
   {
@@ -314,48 +367,25 @@ ul
     //background-color:#fff;
   }
 }
-.nb-discovery-box-items
-{
-  
-  .nb-box-item
-  {
-    position:relative;
-    
-    .nb-box-item-name
-    {
-      width:90%;
-      background-color:#292929;
-      background-color:rgba(0,0,0,0.4);
-      position:absolute;
-      bottom:0;
-      text-align:center;
-      
-      .pad
-      {
-        padding:0px;
-        
-        h5.subheader
-        {
-          margin:0;
-          color:#fff;
-        }
-      }
-    }
-  }
-}
-.nb-dietary-preference,.nb-monthly-box, .nb-how-it-works, .nb-plans, .nb-foods
-{
- 
-}
+
+
 /* ------------------------------------------------- */ 
 /*      styles                                       */
 /* ------------------------------------------------- */
-.nb-clearfix
+.nbcm-clearfix
 {
   line-height:0;
   clear:both;
   margin:0;
 }
+button.cta-orange, .button.cta-orange {
+    background-color: #ff9900;
+    border-color: #ff9900;
+    color: white; }
+    button.cta-orange:hover, button.cta-orange:focus, .button.cta-orange:hover, .button.cta-orange:focus {
+      background-color: #ff7700; }
+    button.cta-orange:hover, button.cta-orange:focus, .button.cta-orange:hover, .button.cta-orange:focus {
+      color: white; }
 
 /* ------------------------------------------------- */ 
 /*      media queries                                */

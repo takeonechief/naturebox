@@ -277,8 +277,10 @@
 					<div class="header">
 
 						<div class="branding">
-							<a href="http://naturebox.com/" title="Healthy Snacks Delivered | NatureBox" class="logo"><strong>Healthy Snacks Delivered | NatureBox</strong><img src="https://naturebox.com/skin/frontend/naturebox/default/images/logo-opt.1359458621.png" alt="Healthy Snacks Delivered | NatureBox" /></a>
+							<a href="http://naturebox.com/" title="Healthy Snacks Delivered | NatureBox" class="logo"><strong>Healthy Snacks Delivered | NatureBox</strong><img src="./img/onestepcheckout/head.png" alt="Healthy Snacks Delivered | NatureBox" /></a>
 						</div>
+						<!-- edit-by-jimmy  hide header links -->
+						<!--
 						<div id="header-links">
 							<ul class="links">
 								<li class="first" >
@@ -290,7 +292,6 @@
 								<li >
 									<a href="/how-it-works" title="How it Works" >How it Works</a>
 								</li>
-								<!--{WISHLISTLINKS_62bff3a308d97f772fccb2deb73e7c9c}--><!--/{WISHLISTLINKS_62bff3a308d97f772fccb2deb73e7c9c}-->
 								<li >
 									<a href="/foods" title="NatureBox Foods" >NatureBox Foods</a>
 								</li>
@@ -305,9 +306,11 @@
 								</li>
 							</ul>
 						</div>
+						
 						<div class="clearfix">
 							&nbsp;
 						</div>
+						-->
 						<div id="welcome-message"></div>
 
 					</div>
@@ -320,10 +323,13 @@
 							<fieldset class="group-select" style="margin: 0;">
 
 								<div class="checkout-header">
+									<!-- edit-by-jimmy  hide checkout text -->
+									<!--
 									<h1 class="onestepcheckout-title">Discover a Healthier You</h1>
 									<p class="onestepcheckout-description">
 										Get ready to enjoy healthy, delicious snacks every month. Satisfaction guaranteed!
 									</p>
+									-->
 									<img style="display:none" src="//api.nanigans.com/event.php?app_id=18320&type=user&name=add_to_cart" />
 									<script type="text/javascript">
 										mixpanel.track("Checkout");
@@ -347,14 +353,18 @@
 
 															<li class="clearfix">
 																<div class="input-box input-firstname">
+																	<!--
 																	<label for="billing:firstname">First Name<span class="required"><em>*</em></span></label>
+																	-->
 																	<br />
-																	<input class="required-entry input-text" type="text" name="billing[firstname]" id="billing:firstname" value="" />
+																	<input class="required-entry input-text" type="text" name="billing[firstname]" id="billing:firstname" value="" placeholder="First Name" />
 																</div>
 																<div class="input-box input-lastname">
+																	<!--
 																	<label for="billing:lastname">Last Name<span class="required"><em>*</em></span></label>
+																	-->
 																	<br />
-																	<input class="required-entry input-text" type="text" name="billing[lastname]" id="billing:lastname" value="" />
+																	<input class="required-entry input-text" type="text" name="billing[lastname]" id="billing:lastname" value="" placeholder="Last Name"/>
 																</div>
 															</li>
 															<li class="clearfix">
